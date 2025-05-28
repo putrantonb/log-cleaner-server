@@ -79,13 +79,13 @@ log_and_echo "> Dikirim dengan Lunarsender"
 
 # Kirim pesan ke WhatsApp via Lunarsender API
 MESSAGE=$(cat $TEMP_LOG | sed ':a;N;$!ba;s/\n/%0A/g')
-API_URL="https://sender.digilunar.com/send-message?api_key=WSdUEKG7mss6OpXEhPtOQlpZpj9QLr61F9qv7L2t&sender=6285156180980&number=6285764615794&message=${MESSAGE}"
+API_URL="https://sender.digilunar.com/send-message?api_key=xxxxxx&sender=6285xxxxxx&number=6285xxxxxx&message=${MESSAGE}"
 
 echo "Mengirim laporan ke Lunarsender API..."
 API_RESPONSE=$(curl -s -G \
-  --data-urlencode "api_key=WSdUEKG7mss6OpXEhPtOQlpZpj9QLr61F9qv7L2t" \
-  --data-urlencode "sender=6285156180980" \
-  --data-urlencode "number=6285764615794" \
+  --data-urlencode "api_key=xxxxxxx" \
+  --data-urlencode "sender=6285xxxxxx" \
+  --data-urlencode "number=6285xxxxxx" \
   --data-urlencode "message=$(cat $TEMP_LOG)" \
   "https://sender.digilunar.com/send-message")
 
